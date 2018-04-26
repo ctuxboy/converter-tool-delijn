@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Converter</title>
+	<meta charset="utf-8">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="author" content="Christophe Hollebeke">
+	<link rel="icon" href="/dl-assets/images/clock.png">
+	<link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+	<link rel="stylesheet" href="/dl-assets/css/delijn.css">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-16001746-7"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-16001746-7');
+	</script>
+
+</head>
+
+<body>
+	<div class="container grid-lg">
+		<div class="columns" style="margin-top: 3%;text-align: center;">
+			<div class="column col-10 col-mx-auto">
+				<h1 class="intro-title" style="color: #3d3bd3;text-shadow: 5px 5px 5px #888;font-weight:bold;">CONVERTER</h1>
+				<p class="describtion-text">Voor het personeel van De Lijn.</p>
+			</div>
+		</div>
+		<!-- Google Adsense -->
+		<div class="columns">
+			<div class="column col-6 col-md-10 col-mx-auto">
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<ins class="adsbygoogle" style="display:block; height:90px;" data-ad-client="ca-pub-4666204851678802" data-ad-slot="9246559274" data-ad-format="auto"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
+			</div>
+		</div>
+
+		<!-- De Lijn Converter -->
+		<div class="columns" style="margin-top:25px;">
+			<div style="background-color: #FFF; box-shadow: 0px 0px 5px #888; border-radius: 5px;" class="column col-6 col-md-10 col-mx-auto">
+				<div style="text-align: center;">
+					<p id="notice" style="padding-top:4%;font-size: 24px;"></p>
+					<form>
+						<input id="inputnumber" style="text-align:center;width:60%;margin:auto;height:3.1rem;font-size:2.3rem" class="form-input" type="number" name="decimalen" autocomplete="off" oninput="numberConverter(this.value)" onchange="numberConverter(this.value)">
+						<p id="error" style="padding-top:2%;color:red;"></p>
+						<div class="form-group">
+							<label class="form-switch">
+    						<input type="checkbox" id="check-numbers" onclick="changeText()"><i class="form-icon"></i> converteer getallen
+  						</label>
+						</div>
+					</form>
+					<h1 class="convert-result" style="margin-top:10%;color:rgba(63, 61, 211, 0.5);font-size:4rem;line-height: 0.2"><span id="display-number">0</span></h1>
+					<h2 id="display-number-text" style="color:rgba(63, 61, 211, 0.5);font-size:2rem;"></h2>
+				</div>
+			</div>
+		</div>
+		<div class="columns" style="margin-top:2%;text-align:center;">
+			<div class="column col-12">
+				<p>Converter is <span style="color:#3d3bd3"></span><i class="fa fa-code"></i> door <a href="https://webkust.be/" target="_blank">Christophe Hollebeke</a><br>v 1.4 - <a href="#" onclick="ShowModal()">Changelog</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" id="modal-id-1">
+		<a href="#close" class="modal-overlay" aria-label="Close"></a>
+		<div class="modal-container">
+			<div class="modal-header">
+				<a href="#" class="btn btn-clear float-right" aria-label="Close" onclick="CloseModal()"></a>
+				<div class="modal-title h4"><strong>Changelog</strong></div>
+			</div>
+			<div class="modal-body">
+				<div class="content">
+					<p><strong>24/04/2018 -v 1.4</strong></p>
+					<ul>
+						<li>Adding Google Adsense</li>
+					</ul>
+					<p><strong>23/04/2018 -v 1.3</strong></p>
+					<ul>
+						<li>Add error text</li>
+						<li>Add toggle minutes <i class="fas fa-arrows-alt-h"></i> numbers</li>
+						<li>Change text minutes <i class="fas fa-arrows-alt-h"></i> numbers</li>
+						<li>Now possible change minutes <i class="fas fa-arrow-right"></i> number and number <i class="fas fa-arrow-right"></i> miutes</li>
+					</ul>
+					<p><strong>19/04/2018 -v 1.2</strong></p>
+					<ul>
+						<li>Replace PHP with JS</li>
+						<li>After loading use offline</li>
+						<li>Result on-the-fly</li>
+						<li>When using on smartphone display only numeric keyboard</li>
+					</ul>
+
+					<p><strong>18/04/2018 - v 1.1</strong></p>
+					<ul>
+						<li>Change url ../delijn.php to ../delijn.html</li>
+						<li>Redirect ../delijn <i class="fas fa-arrow-right"></i> ../delijn.html</li>
+						<li>Error handling: if not a number OR below 1 OR above 99 == FALSE</li>
+					</ul>
+
+					<p><strong>17/04/2018</strong></p>
+					<ul>
+						<li>Release date 1.0</li>
+					</ul>
+				</div>
+			</div>
+			<div class="modal-footer">
+				...
+			</div>
+		</div>
+	</div>
+
+	<script>
+		// initial
+		var xin = document.getElementById("inputnumber").value;
+		var notice = document.getElementById('notice');
+		var errortext = document.getElementById('error');
+		var displaynumbertext = document.getElementById('display-number-text');
+		var displaynumber = document.getElementById("display-number");
+		var checknumber = document.getElementById("check-numbers");
+
+		notice.innerHTML = "Minuten -> Getal";
+		displaynumbertext.innerHTML = "";
+
+		// Checkbox change and show text
+		function changeText() {
+			if (checknumber.checked == true) {
+				notice.innerHTML = "Getal -> Minuten";
+				displaynumbertext.innerHTML = "minuten";
+				error.innerHTML = "";
+				displaynumber.innerHTML = "0";
+			} else {
+				notice.innerHTML = "Minuten -> Getal";
+				displaynumbertext.innerHTML = "";
+				error.innerHTML = "";
+				displaynumber.innerHTML = "0";
+			}
+		}
+
+		// Converter
+		function numberConverter(valNum) {
+			var x = document.getElementById("inputnumber").value;
+			error.innerHTML = "";
+
+			// If the checkbox is checked, convert numbers to minutes
+			if (checknumber.checked == true) {
+				// NUMBER -> MINUTES
+				notice.innerHTML = "Getal -> Minuten";
+				if (isNaN(x) || x <= 0 || x >= 100) {
+					error.innerHTML = "Typ een geheel getal tussen 0 en 100";
+					displaynumber.innerHTML = "0";
+				} else {
+					error.innerHTML = "";
+					displaynumbertext.innerHTML = "minuten";
+					displaynumber.innerHTML = "";
+					displaynumber.innerHTML = Math.round((valNum / 100) * 60);
+				}
+			} else {
+				// MINUTES -> NUMBERS
+				notice.innerHTML = "Minuten -> Getal";
+				if (isNaN(x) || x <= 0 || x >= 60) {
+					error.innerHTML = "Typ aantal minuten tussen 0 en 60";
+					notice.innerHTML = "Minuten -> Getal";
+					displaynumber.innerHTML = "0";
+				} else {
+					error.innerHTML = "";
+					displaynumbertext.innerHTML = "";
+					displaynumber.innerHTML = "";
+					displaynumber.innerHTML = Math.round((valNum / 60) * 100);
+				}
+			}
+		}
+
+		function ShowModal() {
+			document.getElementById("modal-id-1").classList.add("active");
+		}
+
+		function CloseModal() {
+			document.getElementById("modal-id-1").classList.remove("active");
+		}
+	</script>
+</body>
+
+</html>
